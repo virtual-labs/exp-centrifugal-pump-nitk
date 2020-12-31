@@ -1,13 +1,286 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 <head>
-	<!-- Add CSS at the head of HTML file -->
-    <link rel="stylesheet" href="./css/main.css">
-</head>
-<body>
-		<!-- Your code goes here-->
+<meta charset="UTF-8">
 
-	<!-- Add JS at the bottom of HTML file --> 
-        <script src="./js/main.js"></script>
+<title>SOLVE</title>
+<link rel="stylesheet" href="css/SOM.css" />
+<script type="text/javascript" src= "js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src= "js/SOM.js"></script>
+
+<script type="text/javascript" src= "js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src= "js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src= "js/ej.web.all.js"></script>
+
+<!--Stylesheet to display Math functions -->
+<link href="css/mathstyle.css" rel="stylesheet" />
+
+<script>
+var simsubscreennum=0;
+var repetition=0;
+var temp=0;
+var pumpstatus=0;
+var speedset=0;
+var speedmeasured=0;
+var showgauge=1;
+var myInt = setInterval(function(){}, 500);
+//var readingnum=Math.ceil(Math.random()*3);
+var readingnum=1;
+var values=[[0,0,0.51,5.1,1.24,15.46,14.22,10804.9,450,5.53,2160,586.2,27.14],
+			[0.1,1,0.48,4.8,1.24,15.26,14.02,10428.9,425,6.23,2040,637.4,31.25],
+			[0.2,2,0.46,4.6,1.24,14.95,13.71,9861.96,400,7.03,1920,680.12,35.43],
+			[0.3,3,0.42,4.2,1.24,14.65,13.41,9331.3,400,7.63,1920,698.5,36.38],
+			[0.4,4,0.38,3.8,1.24,14.31,13.06,8734.3,380,8.23,1824,705.2,38.66],
+			[0.5,5,0.36,3.6,1.24,13.92,12.68,8112.74,370,9.03,1776,718.7,40.46],
+			[0.6,6,0.33,3.3,1.24,13.42,12.18,7336.48,350,9.73,1680,700.27,41.68],
+			[0.7,7,0.28,2.8,1.24,12.65,11.41,6231.4,325,10.23,1560,625.36,40.1],
+			[0.8,8,0.24,2.4,1.24,11.9,10.66,5257.3,300,10.83,1440,558.5,38.78]]
+</script>
+
+</head>
+
+<body style="margin:0">
+<!--Simulation Screen start		-->
+<div id="simscreen">
+
+<!--Title of Simulation		-->
+<div id="title"><h4>Performance Characteristics of Centrifugal Pump</h4></div>
+
+<!--SubScreen Home	-->
+<div class="simsubscreen" id="canvas0">
+<h4 class="incanvas" >Objective</h4>
+<p class="incanvas" >To conduct the performance test on centrifugal pump and to plot the operating characteristics.</p>
+<h4 class="incanvas" >Apparatus used:</h4>
+<p class="incanvas" >Centrifugal Pump Setup, Wattmeter, Tachometer, V-notch setup, Hook Gauge, Measuring Scale.</p>
+<img id="" style="position: absolute; left: 40px; top: 120px;" src="images/4.png"/>
+<br>&nbsp;<span class="tooltip" style="border-bottom:1px dotted ; color:red;text-align:justify">Description
+	<span class="tooltiptext">
+	<strong style="color:red;text-align:justify">Impeller</strong>: The energy is transferred from the shaft to the impeller and from the impeller to the water. There are three types of impellers, based on the number of shrouds.<br>
+	</span>
+	</span>
+</div>
+
+<!--Blinking Arrow	-->
+<img class ="" id="arrow" style="visibility:hidden" src="images/arrow.png"/>
+<span id="magnify" ></span>
+
+<!--Step1	-->
+<div class="simsubscreen" id="canvas1" style="visibility:hidden">
+<strong id="titlestep" class="incanvas">STEP </strong><span class="circlebg" id="stepnumber" >&nbsp;1&nbsp;</span><p class="steptext" id="pumptext">&nbsp;Start the pump by pressing the start button.</p>
+<span class="tooltip" style="border-bottom:1px dotted ; color:red;position: absolute; left: 0px; top: 50px">Description
+	<span class="tooltiptext">
+	<strong style="color:red">Tachometer</strong>: is a sensor device used to measure the rotation speed of an object such as the engine shaft in a car, and is usually restricted to mechanical or electrical instruments. This device indicates the revolutions per minute (RPM) performed by the object.
+	</span>
+	</span>
+<img id="can1-1" style="position: absolute; left: 0px; top: 70px" src="images/8.png"/>
+<img id="onimg"  src="images/on.png"/>
+<img id="offimg" src="images/off.png"/>
+<img id="pumponarm" src="images/hand.png"/>
+
+</div>
+
+<!--Step2	-->
+<div class="simsubscreen" id="canvas2" style="visibility:hidden">
+<strong class="incanvas" >STEP </strong><span class="circlebg">&nbsp;2&nbsp;</span><p class="steptext"> Rotate the handle to set the speed of motor to be constant and check the speed using tachometer.</p>
+<span class="tooltip" style="border-bottom:1px dotted ; color:red;position: absolute; left: 0px; top: 50px">Description
+	<span class="tooltiptext">
+	<strong style="color:red">Total Static Head</strong>: is a term primarily used in hydraulics to denote the static pressure in a pipe, channel, or duct flow.<br><br>
+	<strong style="color:red">Static Discharge Head</strong>: The vertical distance from the pump outlet to the point of discharge.<br><br>
+	</span>
+	</span>
+<img id="" class="" style="position:absolute;left: 40px; top: 40px" src="images/4-1.png"/>
+<img id="step2handle" class=""  src="images/3.png"/>
+<img id="" class="" style="position:absolute;left: 250px; top: 270px;" onclick="" src="images/5.png"/>
+<span id="tachohole" onclick="step2nhalf()" style="padding: 6px; position: absolute; top: 327px; left: 272px; cursor:pointer"></span>
+
+<img id="lever" class="" style="position:absolute;left: 508px; top: 56px;cursor:pointer;" onclick="step2()" src="images/speedlever.png"/>
+<img id="tachoarm" style="margin-left:-165px; margin-top: -135px; position:absolute; visibility:hidden;" src="images/tachoarm.png"/>
+<img id="" class="" style="position:absolute;left: 489px; top: 276px;" src="images/tachometer.png"/>
+<img id="needle" class="" style="position:absolute;left: 496px; top: 459px;" src="images/needle.png"/>
+<p id="step2text" style=" position:absolute;top: 450px;" class="incanvas"> Speed of Motor = ____ rpm</p>
+</div>
+
+<!--Step3-->
+<div class="simsubscreen" id="canvas3" style="visibility:hidden">
+<strong class="incanvas" >STEP </strong><span class="circlebg">&nbsp;3&nbsp;</span><p class="steptext"> Open the delivery valve and allow the water to flow in the channel. Take the hook guage reading at the V-notch before and after valve opening to find the discharge.</p>
+<img id="41" class="" style="position:absolute;left: 0px; top: 50px" src="images/4-1.png"/>
+<img id="delvalve" class="" style="position:absolute;left: 407px; top: 45px; width:115px;" src="images/delivery_valve.png"/>
+<img id="hookguage" onclick="" class="" style="visibility:hidden; position:absolute;left: 30px; top: 260px" src="images/hookguage.png"/>
+
+<img id="valvearm"  class=""  src="images/valvearm.png"/>
+<p id="step3text1" style="visibility:hidden; position:absolute;top: 300px; left:360px" class="incanvas"> Initial reading (water level till crest) = ____ cm </p>
+<p id="step3text2" style="visibility:hidden; position:absolute;top: 330px; left:360px" class="incanvas"> Final reading = ____ cm</p>
+<p id="step3text3" style="visibility:hidden; position:absolute;top: 360px; left:360px" class="incanvas"> Head of water = ____ cm</p>
+<div class="formulaTooltip" style="position:absolute;top: 390px; left:360px;">
+	<p id="step3text4" style="font-family:verdana;font-size:14px;visibility:hidden;">Actual discharge Q<sub>act</sub> =______m<sup>3</sup>/sec</p>
+    <span class="formulaTooltipText" style="width: 250px">Q<sub>act</sub> (cm<sup>3</sup>/sec) = 14.17 &times; h<sup>(5/2)</sup></span>
+</div>
+<!-- <p id="step3text4" style="visibility:hidden; position:absolute;top: 390px; left:360px;visibility:hidden" class="incanvas"> Actual discharge Q<sub>act</sub> =______m<sup>3</sup>/sec</p> -->
+
+<img id="hook1" onclick="" class="" style="visibility:hidden;position: absolute;left: 244px;top: 350px;height: 24px;" src="images/hookgauge1.png"/>
+<img id="hook2" onclick="" class="" style="visibility:hidden;position: absolute;left: 247px;top: 300px;width: 14px;" src="images/hookgauge2.png">
+<img id="hook3" onclick="" class="" style="visibility:hidden;position:absolute;left: 200px;top: 330px;width: 100px;z-index:5" src="images/hookgauge3.png"/>
+<img id="hook4" onclick="" class=""  src="images/cover.png"/>
+<img id="hook5" onclick="" class=""  src="images/cover.png"/>
+<img id="water" class=""  src="images/coverblue.png"/>
+<span id="sethook" style="padding: 6px; width:20px; height:20px; position: absolute; top: 345px; left: 255px; cursor: pointer; z-index:12"></span>
+</div>
+
+<!--Step4		-->
+<div class="simsubscreen" id="canvas4" style="visibility:hidden">
+<strong class="incanvas" >STEP </strong><span class="circlebg">&nbsp;4&nbsp;</span><p class="steptext"> Note the delivery pressure reading for the corresponding discharge.</p>
+<img id="" class="" style="position:absolute;left: 0px; top: 100px" src="images/4-1.png"/>
+
+<img id="delhead" class="" style="position:absolute;left: 400px; top: 100px; visibility:hidden;" src="images/delhead.png"/>
+<img id="needle4" class="" style="position:absolute;left: 452px; top: 180px; visibility:hidden;" src="images/needle.png"/>
+<p id="step4text1" style=" position:absolute;top: 420px;" class="incanvas"> Delivery Head = ____ kg/cm<sup>2</sup></p>
+<p id="step4text2" style=" position:absolute;top: 450px;" class="incanvas"> Delivery Head = ____ m</p>
+
+</div>
+
+<!--Step5		-->
+<div class="simsubscreen" id="canvas5" style="visibility:hidden">
+<strong class="incanvas" >STEP </strong><span class="circlebg">&nbsp;5&nbsp;</span><p class="steptext"> Take the suction head pressure reading corresponding to the discharge.</p>
+<img id="" class="" style="position:absolute;left: 0px; top: 100px" src="images/4-1.png"/>
+
+<img id="suchead" class="" style="position:absolute;left: 400px; top: 100px" src="images/suchead.png"/>
+<img id="needle5" class="" style="position:absolute;left: 454px; top: 186px;visibility:hidden;" src="images/needle.png"/>
+<p id="step5text1" style=" position:absolute;top: 380px;left: 10px;" class="incanvas"> Suction Head = ____ kg/cm<sup>2</sup></p>
+<p id="step5text2" style=" position:absolute;top: 410px;left: 10px;" class="incanvas"> Suction Head = ____ m</p>
+<p id="step5text3" style=" position:absolute;top: 440px;left: 10px;" class="incanvas"> z = 43 cm</p>
+<!-- <p id="step5text4" style=" position:absolute;top: 470px;" class="incanvas"> </p> -->
+<div class="formulaTooltip" style="position:absolute;top: 470px;left: 10px;">
+    <p id="step5text4" style="font-family:verdana;font-size:14px;"> </p>
+    <span class="formulaTooltipText">H (m)= H<sub>d</sub>+H<sub>s</sub>+z</span>
+</div>
+
+</div>
+
+<!--Step6		-->
+<div class="simsubscreen" id="canvas6" style="visibility:hidden">
+<strong class="incanvas" >STEP </strong><span class="circlebg">&nbsp;6&nbsp;</span><p class="steptext"> Note the watt meter reading corresponding to the discharge.</p>
+<img id="" class="" style="position:absolute;left: 0px; top: 30px" src="images/4-1.png"/>
+<img id="wattmeter2" class="" style="z-index:2; visibility:hidden;position:absolute;left: 400px; top: 95px" src="images/wattmeter2.png"/>
+<img id="wattmeter3" class="" style="z-index:0; visibility:hidden;position:absolute;left: 400px; top: 95px" src="images/wattmeter3.png"/>
+<img id="needlewatt" class="" style="z-index:1; visibility:hidden;position:absolute;left: 400px; top: 95px" src="images/needlewatt.png"/>
+
+<p id="step6text1" style=" position:absolute;top: 380px;" class="incanvas"> Wattmeter Reading (W<sub>R</sub>)= ____ Watt</p>
+
+</div>
+
+<!--Step7		-->
+<div class="simsubscreen" id="canvas7" style="visibility:hidden">
+<strong class="incanvas" style="position:absolute;top: 30px; left:50px" ><h2>Observation</h2></strong>
+<span class="tooltip" style="border-bottom:1px dotted ; color:red;position: absolute; left: 0px; top: 30px;text-align:justify">Description
+	<span class="tooltiptext">
+		<strong style="color:red">Efficiency</strong>: is defined as a level of performance that uses the lowest amount of inputs to create the greatest amount of outputs.<br><br>
+		<strong style="color:red">The Actual Discharge of an Axial Piston Pump</strong>: is usually defined as the difference between the theoretical pump discharge and the total leakage.<br><br>
+		<strong style="color:red">Input Power</strong>: is the power, which is required by the appliance at its input i.e., from the plug point.<br><br>
+		<strong style="color:red">Output Power</strong>: is the power available at a specified output of a device under specified conditions of operation.<br>
+	</span>
+	</span>
+<p id="can6-1" style="position:absolute;top: 80px; left:220px">  Wattmeter Reading (W<sub>R</sub>) = </p>
+<p id="can6-2" style="position:absolute;top: 110px; left:220px"> Actual Discharge (Q<sub>act</sub>) = </p>
+<p id="can6-3" style="position:absolute;top: 145px; left:220px">Total Head (H) = </p>
+
+
+
+
+
+
+<p><strong class="incanvas" style="position:absolute;top: 250px; left:50px" ><h2>Result</h2></strong></p>
+<span class="tooltip" style="border-bottom:1px dotted ; color:red;position: absolute; left: 0px; top: 300px">Variables in Calculation
+	<span class="tooltiptext">
+		<ol>
+			<li>W<sub>c</sub>: Wattmeter Constant = 2W </li>
+			<li>N<sub>p</sub>: Number of phase = 3</li>
+			<li>&eta;<sub>m</sub>: Efficiency of motor = 0.8</li>
+			<li>&gamma;: Specific Weight of water = 9810N/m<sup>3</sup></li>
+		</ol>
+	</span>
+	</span>
+
+<div class="formulaTooltip" style="position:absolute;top: 300px; left:220px">
+    <p id="step7text6by2" style="font-family:verdana;font-size:14px;"> Input power =   </p>
+    <span class="formulaTooltipText" style="width: 300px">Input Power (W) = W<sub>R</sub> &times; W<sub>c</sub> &times; &eta;<sub>m</sub> &times; N<sub>p</sub></span>
+</div>
+<div class="formulaTooltip" style="position:absolute;top: 330px; left:220px">
+    <p id="step7text7by2" style="font-family:verdana;font-size:14px;"> Output power = </p>
+    <span class="formulaTooltipText" style="width: 250px">Output Power (W) = &gamma; &times; Q<sub>act</sub> &times; H</span>
+</div>
+<div class="formulaTooltip" style="position:absolute;top: 360px; left:220px">
+    <p id="step7text8by2" style="font-family:verdana;font-size:14px;"> Efficiency =  </p>
+    <span class="formulaTooltipText" style="width: 250px">&eta; (%) = <span class="frac"><sup>Output Power</sup><span>&frasl;</span><sub>Input Power</sub></span>&times; 100</span>
+</div>
+<!-- <p id="step7text6by2" style="position:absolute;top: 300px; left:220px"> Input power =  </p>
+<p id="step7text7by2" style="position:absolute;top: 330px; left:220px"> Output power =  </p>
+<p id="step7text8by2" style="position:absolute;top: 360px; left:220px"> Efficiency =   </p> -->
+
+<!--
+<p id="step7text6by2" style=" position:absolute;top: 260px; left:200px" class="incanvas"> = ____ W</p>
+<p id="step7text7by2" style=" position:absolute;top: 320px; left:200px" class="incanvas"> = ____ W</p>
+<p id="step7text8by2" style=" position:absolute;top: 380px; left:200px" class="incanvas"> = ____ %</p>
+
+
+<p id="step7text1" style=" position:absolute;top: 50px; left:70px" class="incanvas"> Delivery Head = ____ m of water</p>
+<p id="step7text2" style=" position:absolute;top: 80px;left:70px" class="incanvas"> Suction Head = ____ m of water</p>
+<p id="step7text3" style=" position:absolute;top: 110px;left:70px" class="incanvas"> Actual Discharge, Q<sub>act</sub> = 14.17 x h<sup>5/2</sup></p>
+
+<p id="step7text3by2" style=" position:absolute;top: 140px; left:200px" class="incanvas"> = ____ cm<sup>3</sup>/sec</p>
+
+<p id="step7text4" style=" position:absolute;top: 170px;left:70px" class="incanvas"> Watt Meter Reading, W<sub>R</sub> = ____ W</p>
+
+<p id="step7text5" style=" position:absolute;top: 200px;left:70px" class="incanvas"> Total Head, H = H<sub>s</sub>+H<sub>d</sub>+z = ____ m</p>
+
+<p id="step7text6" style=" position:absolute;top: 230px;left:70px" class="incanvas">Input Power = W<sub>R</sub> x W<sub>C</sub> x  &eta;<sub>m</sub> x N<sub>P</sub></p>
+<p id="step7text8" style=" position:absolute;top: 350px;left:70px" class="incanvas"> Efficiency, &eta; = (O.P/I.P) x 100</p>
+
+<p id="step7text7" style=" position:absolute;top: 290px;left:70px" class="incanvas"> Output Power = &gamma; x Q x H</p>
+
+
+<p id="step7text9" style=" visibility:hidden; position:absolute;top: 430px;" class="incanvas"> Repeat Steps 3, 4, 5 and 6 to get data points for plotting graph</p>
+-->
+</div>
+
+<div class="simsubscreen" id="canvas8" style="visibility:hidden;">
+<h1 id="can8-1" style="position:absolute; left:0px; top:200px; color:grey; text-align:center;padding:10px;">Repeat the procedure until the discharge is reduced to zero.</h1>
+</div>
+
+<div class="simsubscreen" id="canvas9" style="visibility:hidden">
+
+<center><h4 style="cursor:pointer;top:0px"> PERFORMANCE CHARACTERISTICS CURVES </h4></center>
+<span class="highlight" id="step9text1" style="border: 3px outset; position:absolute;left:30px; top:50px;cursor:pointer;">&nbsp;&nbsp;Efficiency vs Actual Discharge&nbsp;&nbsp;</span>
+<span  class="highlight" id="step9text2" style="border: 3px outset; position:absolute;left:430px; top:50px ;cursor:pointer;" >&nbsp;&nbsp;Input Power vs Actual Discharge&nbsp;&nbsp;</span>
+<span class="highlight" id="step9text3" style="border: 3px outset; position:absolute;left:430px; top:90px;cursor:pointer;" >&nbsp;&nbsp;Output Power vs Actual Discharge&nbsp;&nbsp;</span>
+<span  class="highlight" id="step9text4" style="border: 3px outset; position:absolute;left:30px; top:90px;cursor:pointer;" >&nbsp;&nbsp;Total Head vs Actual Discharge&nbsp;&nbsp;</span>
+<div id="chartContainer" style="height: 420px; width: 600px;margin-left:25px;margin-right:100px;margin-top:80px"></div>
+
+</div>
+
+<!--Trial text	-->
+<div id="">
+<p id="trial" style="text-transform: uppercase;visibility :hidden;font-weight: bold;"><strong>Trial = </strong></p>
+</div>
+
+
+<!-- This is the questions division -->
+<span id="question-div">
+	 <p id="divq" style="font-family:verdana; font-size:14px;">Both ends of the pipe must be trimmed to ensure parallel faces.</p>
+	 <!-- <input type="button" style="cursor:pointer" value="OK" onclick = "evaluateAnswer();"> -->
+	 <p id="ans"></p>
+</span>
+
+<span id="formula" style = "background-color:black;color:white;visibility:hidden"></span>
+<div id="nav">
+<img id="nextButton" onclick="navNext(); " src="images/Next.png" />
+<img id="prevButton" onclick="navPrev();" style="visibility:hidden" src="images/Back.png" />
+</div>
+
+<div id="copyright"> &copy; 2015 - <script>document.write(new Date().getFullYear())</script> SOLVE - The Virtual Lab @ NITK Surathkal, Department of Water Resources & Ocean Engineering</div>
+
+</div>
+
+
+
 </body>
 </html>

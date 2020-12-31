@@ -1,0 +1,315 @@
+html
+{
+    -moz-user-select     : none;
+    -khtml-user-select   : none;
+    -webkit-user-select  : none;
+    -o-user-select       : none;
+    user-select          : none;
+}
+#simscreen
+{
+position: relative;
+left:0px;
+top:0px;
+height: 600px; 
+width:800px;
+border:solid 1px;
+background-color:white;
+font-family:verdana;
+font-size:14px;
+}
+
+#copyright{
+position: absolute;
+left:50px;
+top: 580px;
+font-family: verdana; 
+font-size:12px
+}
+
+#title{
+position:relative;
+left: 0px;
+top: 0px;
+height:40px;
+font-size: 24px;
+text-align:center;
+background-color: black;
+font-family: verdana;
+color: White;
+text-transform: uppercase; 
+}
+
+#title h4{
+padding-top:2px;
+margin:0px;}
+
+.simsubscreen
+{
+position:absolute;
+left: 50px;
+top: 50px;
+height:530px;
+width:745px;
+
+}
+
+.incanvas
+{
+margin:5px 0 0 5px;
+padding:0;
+
+}
+#nextButton{
+    position: absolute;
+    left: 750px;
+    top: 530px;
+cursor:pointer;
+}
+#prevButton{
+    position: absolute;
+    left: 0px;
+    top: 532px;
+cursor:pointer;
+}
+
+#question-div{
+	position: absolute;
+	left:400px;
+	top:350px;
+	width:300px;
+	height:120px;
+	border:ridge 3px lightgrey;
+	background-color: lightgrey;
+	/* filter: alpha(opacity=55); */
+	color:black;
+	padding:10px;
+	visibility:hidden;
+}
+.steptext{
+display:inline;}
+
+
+.circlebg
+{
+border-radius:100%;
+font-size:25px;
+color:#fff;
+text-align:center;
+background:#000
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  font-family: verdana;
+	font-size:14px;
+}
+
+.tooltip .tooltiptext {
+	font-family: verdana;
+	font-size:14px;
+  visibility: hidden;
+  width: 500px;
+  background-color: black;
+  color: #fff;
+  border-radius: 6px;
+  padding: 10px 10px 10px 10px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 100;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.inputStyle{
+	border:none;
+	border-bottom: 1px solid;
+	width:55px;
+	font-family:verdana;
+	font-size:14px;
+	text-align:center;
+}
+.resultStyle{
+	border:none;
+	border-bottom-style:double;
+	width:55px;
+	font-family:verdana;
+	font-size:14px;
+	text-align:center;
+	
+}
+#can8-1{
+	opacity:0;
+	transition:opacity 1s;
+}
+#can8-1.fade{
+	opacity:1;
+}
+
+input[type=text]:focus{
+ outline:none;
+}
+.formulaTooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.formulaTooltip .formulaTooltipText {
+  visibility: hidden;
+  background-color: black;
+  color: #fff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 14px;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 80%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.formulaTooltip .formulaTooltipText::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+
+.formulaTooltip:hover .formulaTooltipText {
+  visibility: visible;
+}
+
+
+.highlight:active{
+	background-color: lightgrey;
+	color:white;
+	padding: 4px;
+}
+
+.highlight:hover{
+	background-color: #171819;
+	color:white;
+	border-style: outset;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes myturn {
+0% {-webkit-transform: rotate(-75deg);}    
+100% {-webkit-transform: rotate(45deg);}
+}
+
+/* Standard syntax */
+@keyframes myturn {
+    0% {transform: rotate(-75deg);}
+    100% {transform: rotate(45deg);}
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes myturn2 {
+0% {-webkit-transform: rotate(0deg);}    
+100% {-webkit-transform: rotate(30deg);}
+}
+
+/* Standard syntax */
+@keyframes myturn2 {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(30deg);}
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes valveturn {
+0% {-webkit-transform: rotate(0deg);}    
+100% {-webkit-transform: rotate(25deg);}
+}
+
+/* Standard syntax */
+@keyframes valveturn {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(25deg);}
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes myhook {
+0% {-webkit-transform: translate(0, 0 );}
+40% {-webkit-transform: translate(0, 7px );}
+70% {-webkit-transform: translate(0, -5px );}
+100% {-webkit-transform: translate(0, 2px );}
+}
+
+/* Standard syntax */
+@keyframes myhook {
+    0% {transform: translate(0, 0);}
+    40% {transform: translate(0, 7px);}
+    70% {transform: translate(0, -5px);}
+    100% {transform: translate(0, 2px);}
+}
+
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes water {
+0% {-webkit-transform: translate(0, -10px );}
+100% {-webkit-transform: translate(0, -22px );}
+}
+
+/* Standard syntax */
+@keyframes water {
+    0% {transform: translate(0, -10px);}
+    100% {transform: translate(0, -22px);}
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes water0 {
+0% {-webkit-transform: translate(0, 0 );}
+100% {-webkit-transform: translate(0, -10px );}
+}
+
+/* Standard syntax */
+@keyframes water0 {
+    0% {transform: translate(0, 0);}
+    100% {transform: translate(0, -10px);}
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes myhookfinal {
+0% {-webkit-transform: translate(0, 0 );}
+50% {-webkit-transform: translate(0, -14px );}
+100% {-webkit-transform: translate(0, -10px );}
+}
+
+/* Standard syntax */
+@keyframes myhookfinal {
+    0% {transform: translate(0, 0);}
+    50% {transform: translate(0, -14px);}
+    100% {transform: translate(0, -10px);}
+}
+@-webkit-keyframes blink_effect { // for Safari 4.0 - 8.0
+  0% {
+    visibility: hidden;
+  }
+  50% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+@keyframes blink_effect {
+  0% {
+    visibility: hidden;
+  }
+  50% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
