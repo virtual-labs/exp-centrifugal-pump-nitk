@@ -1,0 +1,58 @@
+{
+
+   "details": [
+       {
+			"Experiment": "Performance Characteristics of Centrifugal Pump",
+			"Lab": "Fluid Machinery Lab",
+			"Discipline": "Civil Engineering",
+			"Technology": "HTML, Javascript, CSS, JQuery"
+       }
+   ],
+
+   "developer": [
+       {
+      "Developer": "Dr. Pruthviraj U",
+      "Institute": "National Institute of Technology Karnataka, Surathkal",
+      "InstituteAcronym": "NITK"
+       }
+   ],
+
+   "contributer": [
+       {
+			"Contributer": "Akshaya",
+      "Institute": "National Institute of Technology Karnataka, Surathkal",
+      "InstituteAcronym": "NITK"
+       },
+
+       {
+			"Contributer": "Santhosh Acharya",
+      "Institute": "National Institute of Technology Karnataka, Surathkal",
+      "InstituteAcronym": "NITK"
+       },
+
+       {
+			"Contributer": "Swathi Shetty",
+      "Institute": "National Institute of Technology Karnataka, Surathkal",
+      "InstituteAcronym": "NITK"
+       },
+
+       {
+			"Contributer": "Sampath Kumar",
+      "Institute": "National Institute of Technology Karnataka, Surathkal",
+      "InstituteAcronym": "NITK"
+       },
+
+	   	 {
+			"Contributer": "Aishwarya Shetty",
+      "Institute": "National Institute of Technology Karnataka, Surathkal",
+      "InstituteAcronym": "NITK"
+       },
+
+	     {       
+			"Contributer": "Aishwarya Hegde",
+      "Institute": "National Institute of Technology Karnataka, Surathkal",
+      "InstituteAcronym": "NITK"
+       }
+   ]
+
+}
