@@ -52,6 +52,15 @@
 <p style="text-indent:50px;text-align:justify">The performance characteristics of centrifugal pump can be determined by following formulae.</p>
 
 <ul style="text-indent:25px;text-align:justify;list-style-position: inside;">
+  <li>Total Head, H = H<sub>d</sub> + H<sub>s</sub> + z<br/>
+
+  Where, <br>  
+  Hd=Discharge head<br>    
+  Hs=Suction Head<br>    
+  z = difference in the height of pressure gauges  
+  </li>
+
+
   <li>Input power, I.P = W<sub>R</sub> x W<sub>C</sub> x η<sub>m</sub> x N<sub>p</sub><br>
 
   Where, W<sub>R</sub> = Watt meter reading<br>
