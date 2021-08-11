@@ -25,5 +25,13 @@
   </tr>
 </table>
  
+
+ ### Lagu paTa:
+
+ #### Simulation demo:
+ <li><a href="https://youtu.be/sWrKsNFMClw">https://youtu.be/sWrKsNFMClw</a></li>
+ 
+ #### Experimental demo:
+ <li><a href="https://youtu.be/f8jmQn1DZPI">https://youtu.be/f8jmQn1DZPI</a></li>
  
 
